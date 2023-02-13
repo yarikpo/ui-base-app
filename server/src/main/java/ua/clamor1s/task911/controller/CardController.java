@@ -10,6 +10,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/cards")
+@CrossOrigin(origins = "*")
 public class CardController {
 
     @Autowired

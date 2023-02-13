@@ -14,6 +14,8 @@ import * as PAGES from 'constants/pages';
 import {
   fetchUser,
 } from '../actions/user';
+import CardsList from 'pageProviders/CardsList';
+import EditCard from 'pageProviders/EditCard';
 
 const App = () => {
   const [state, setState] = useState({
@@ -40,6 +42,12 @@ const App = () => {
               </Route>
               <Route path={`/${PAGES.INITIAL}`}>
                 <PageInitial />
+              </Route>
+              <Route path={`/${PAGES.CARDS_LIST}`}>
+                <CardsList />
+              </Route>
+              <Route path={`/${PAGES.EDIT_CARD}`}>
+                <EditCard />
               </Route>
               <Redirect from="*" to={`/${PAGES.INITIAL}`} />
             </Switch>

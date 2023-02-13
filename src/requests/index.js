@@ -8,6 +8,21 @@ const getHeaders = () => ({
   'Content-Type': 'application/json',
 });
 
+export const fetchDelete = ({ url }) => {
+  return fetch(
+    url,
+    {
+      headers: getHeaders(),
+      method: 'DELETE',
+    }
+  ).then((response) => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  });
+}
+
 const fetchGet = ({ params = {}, url }) => {
   url = new URL(url);
   url.search = new URLSearchParams(params).toString();
@@ -33,6 +48,7 @@ const fetchPost = ({ body, params = {}, url }) => {
     }
   );
 };
+
 
 export const getJson = ({
   params,
