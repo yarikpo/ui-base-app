@@ -1,5 +1,5 @@
 import useAccessValidate from "hooks/useAccessValidate";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import Actions from "../actions/card";
@@ -9,6 +9,8 @@ import Typography from "components/Typography";
 import CardActions from "components/CardActions";
 import Button from "components/Button";
 import { makeStyles } from "@material-ui/core";
+import { useHistory } from 'react-router-dom';
+import * as PAGES from 'constants/pages';
 
 const useStyles = makeStyles({
     root: {
@@ -25,6 +27,9 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         alignItems: 'center',
         width: 1000,
+    },
+    btn: {
+
     }
 })
 
@@ -53,15 +58,20 @@ const CardsList = (
         dispatch(Actions.receiveCards());
     }, []);
 
-    const [isDeleting, setIsDeleting] = useState(false);
     const deleteById = (cardId) => {
         dispatch(Actions.deleteCardById({cardId}));
+    }
+
+    const history = useHistory();
+    const navigateToEdit = (id=null) => {
+        history.push(`${PAGES.EDIT_CARD}/${id}`);
     }
 
     return (
         <div>
             {canSee && (
                 <div className={classes.cards}>
+                    <Button onClick={() => navigateToEdit(0)} size="small" color="primary">Create</Button>
                     {list.map(card => (
                         <div key={card.cardId}>
                             <Card className={classes.root}>
@@ -80,7 +90,7 @@ const CardsList = (
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" color="primary">Edit</Button>
+                                    <Button onClick={() => navigateToEdit(card.cardId)} size="small" color="primary">Edit</Button>
                                     <Button onClick={() => deleteById(card.cardId)} variant="contained" color="secondary" size="small">Delete</Button>
                                 </CardActions>
                             </Card>
