@@ -46,7 +46,7 @@ const App = () => {
               <Route path={`/${PAGES.CARDS_LIST}`}>
                 <CardsList />
               </Route>
-              <Route path={`/${PAGES.EDIT_CARD}/:clientId`}>
+              <Route path={`/${PAGES.EDIT_CARD}/:cardId`}>
                 <EditCard />
               </Route>
               <Redirect from="*" to={`/${PAGES.INITIAL}`} />

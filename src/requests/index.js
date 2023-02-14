@@ -49,6 +49,39 @@ const fetchPost = ({ body, params = {}, url }) => {
   );
 };
 
+const fetchPut = ({ body, url }) => {
+  return fetch(
+    url,
+    {
+      body: JSON.stringify(body),
+      headers: getHeaders(),
+      method: 'PUT',
+    }
+  );
+}
+
+export const putJson = ({
+  cardId,
+  card,
+  url,
+}) => {
+  return fetchPut({
+    url,
+    body: {
+      name: card.name,
+      surname: card.surname,
+      code: card.code,
+      cvv: card.cvv,
+      creationDate: card.creationDate,
+    }
+  }).then((response) => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  })
+};
+
 
 export const getJson = ({
   params,
