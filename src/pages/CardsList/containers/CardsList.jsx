@@ -71,7 +71,13 @@ const CardsList = (
         <div>
             {canSee && (
                 <div className={classes.cards}>
-                    <Button onClick={() => navigateToEdit(0)} size="small" color="primary">Create</Button>
+                    <Button 
+                        onClick={() => navigateToEdit(0)} 
+                        size="small" 
+                        color="primary"
+                    >
+                        Create
+                    </Button>
                     {list.map(card => (
                         <div key={card.cardId}>
                             <Card className={classes.root}>
@@ -79,19 +85,39 @@ const CardsList = (
                                     <Typography variant="h5" component="h2">
                                         {card.code}
                                     </Typography>
-                                    <Typography color="textSecondary" gutterBottom>
+                                    <Typography 
+                                        color="textSecondary" 
+                                        gutterBottom
+                                    >
                                         {card.cvv}
                                     </Typography>
                                     <Typography variant="body1" component="p">
                                         {card.surname} {card.name}
                                     </Typography>
-                                    <Typography className={classes.pos} variant="body2" component="p">
+                                    <Typography 
+                                        className={classes.pos} 
+                                        variant="body2" 
+                                        component="p"
+                                    >
                                         Date: {card.creationDate}
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button onClick={() => navigateToEdit(card.cardId)} size="small" color="primary">Edit</Button>
-                                    <Button onClick={() => deleteById(card.cardId)} variant="contained" color="secondary" size="small">Delete</Button>
+                                    <Button 
+                                        onClick={() => navigateToEdit(card.cardId)} 
+                                        size="small" 
+                                        color="primary"
+                                    >
+                                        Edit
+                                    </Button>
+                                    <Button 
+                                        onClick={() => deleteById(card.cardId)} 
+                                        variant="contained" 
+                                        color="secondary" 
+                                        size="small"
+                                        >
+                                            Delete
+                                        </Button>
                                 </CardActions>
                             </Card>
                         </div>

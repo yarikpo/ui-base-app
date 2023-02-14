@@ -1,4 +1,9 @@
-import { DELETE_CARD, ERROR_RECEIVE_CARD, RECEIVE_CARD, REQUEST_CARD } from "../actions/actionTypes";
+import { 
+    DELETE_CARD, 
+    ERROR_RECEIVE_CARD, 
+    RECEIVE_CARD, 
+    REQUEST_CARD 
+} from "../actions/actionTypes";
 
 const initialState = {
     isLoading: false,
@@ -35,7 +40,9 @@ export default (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 isError: false,
-                list: state.list.filter(card => card.cardId !== action.card.cardId)
+                list: state.list.filter(
+                    card => card.cardId !== action.card.cardId
+                ),
             };
         }
 

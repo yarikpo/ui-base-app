@@ -128,18 +128,60 @@ const EditCard = (
             {canSee && !isLoading && (
                 // defaultValue={card.code || ''}
                 <>
-                    <TextField onChange={handleCodeChange} defaultValue={card != null && cardId > 0 ? card.code : ''} label='Code' />
+                    <TextField 
+                        onChange={handleCodeChange} 
+                        defaultValue={
+                            card != null && cardId > 0 ? card.code : ''
+                        } 
+                        label='Code' 
+                    />
                     <br />
-                    <TextField onChange={handleCVVChange} defaultValue={card != null && cardId > 0 ? card.cvv : ''} type='number' label='CVV' />
+                    <TextField 
+                        onChange={handleCVVChange} 
+                        defaultValue={
+                            card != null && cardId > 0 ? card.cvv : ''
+                        } 
+                        type='number' 
+                        label='CVV' 
+                    />
                     <br />
-                    <TextField onChange={handleNameChange} defaultValue={card != null && cardId > 0 ? card.name : ''} label='Name' />
+                    <TextField 
+                        onChange={handleNameChange} 
+                        defaultValue={
+                            card != null && cardId > 0 ? card.name : ''
+                        } 
+                        label='Name' 
+                    />
                     <br />
-                    <TextField onChange={handleSurnameChange} defaultValue={card != null && cardId > 0 ? card.surname : ''} label='Surname' />
+                    <TextField 
+                        onChange={handleSurnameChange} 
+                        defaultValue={
+                            card != null && cardId > 0 ? card.surname : ''
+                        } 
+                        label='Surname' 
+                    />
                     <br /><br />
-                    <TextField onChange={handleDateChange} defaultValue={card != null && cardId > 0 ? card.creationDate : ''} type='date' />
+                    <TextField 
+                        onChange={handleDateChange} 
+                        defaultValue={
+                            card != null && cardId > 0 ? card.creationDate : ''
+                        } 
+                        type='date' 
+                    />
                     <br /><br />
-                    <Button onClick={handleUpdate} variant="contained" size="big" color="primary">{cardId == 0 ? 'Create' : 'Update'}</Button>
-                    <Button onClick={navigateToCardList} size="big" color="primary">Cancel</Button>
+                    <Button 
+                        onClick={handleUpdate} 
+                        variant="contained" 
+                        size="big" 
+                        color="primary">{cardId == 0 ? 'Create' : 'Update'}
+                    </Button>
+                    <Button 
+                        onClick={navigateToCardList} 
+                        size="big" 
+                        color="primary"
+                    >
+                        Cancel
+                    </Button>
                 </>
             )}
         </div>

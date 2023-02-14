@@ -1,4 +1,10 @@
-import { ERROR_RECEIVE_CARD, RECEIVE_CARD, REQUEST_CARD, SAVE_CARD, UPDATE_CARD } from "../actions/actionTypes";
+import { 
+    ERROR_RECEIVE_CARD, 
+    RECEIVE_CARD, 
+    REQUEST_CARD, 
+    SAVE_CARD, 
+    UPDATE_CARD 
+} from "../actions/actionTypes";
 
 const initialState = {
     card: null,

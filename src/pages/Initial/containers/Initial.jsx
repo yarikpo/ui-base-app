@@ -4,6 +4,9 @@ import { useSelector } from 'react-redux';
 import Link from 'components/Link';
 import Typography from 'components/Typography';
 import useAccessValidate from 'hooks/useAccessValidate';
+import Button from 'components/Button';
+import { useHistory } from 'react-router-dom';
+import * as PAGES from 'constants/pages';
 
 const getClasses = makeStyles(() => ({
   container: {
@@ -16,6 +19,10 @@ const Initial = ({
   authorities,
 }) => {
   const classes = getClasses();
+  const history = useHistory();
+  const navigateToCardList = () => {
+    history.push(`/${PAGES.CARDS_LIST}`)
+  }
   const {
     availableItems,
   } = useSelector(({ reducer })=> reducer);
@@ -44,6 +51,15 @@ const Initial = ({
           </Typography>
         </Link>
       ))}
+      {canSeeList && (
+        <Button 
+          onClick={navigateToCardList} 
+          size="big" 
+          color="primary"
+        >
+          List
+        </Button>
+      )}
       {!canSeeList && (
         <Typography>
           Не могу ничего показать :(

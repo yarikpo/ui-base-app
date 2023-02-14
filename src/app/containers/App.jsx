@@ -49,6 +49,10 @@ const App = () => {
               <Route path={`/${PAGES.EDIT_CARD}/:cardId`}>
                 <EditCard />
               </Route>
+              <Redirect 
+                from={`/${PAGES.EDIT_CARD}`} 
+                to={`/${PAGES.EDIT_CARD}/0`} 
+              />
               <Redirect from="*" to={`/${PAGES.INITIAL}`} />
             </Switch>
         )}

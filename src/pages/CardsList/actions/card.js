@@ -1,5 +1,10 @@
 import { getJson, fetchDelete } from "requests";
-import { REQUEST_CARD, RECEIVE_CARD, ERROR_RECEIVE_CARD, DELETE_CARD } from "./actionTypes";
+import { 
+    REQUEST_CARD, 
+    RECEIVE_CARD, 
+    ERROR_RECEIVE_CARD, 
+    DELETE_CARD 
+} from "./actionTypes";
 import Config from "config";
 
 const requestCard = () => ({

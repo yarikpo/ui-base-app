@@ -1,5 +1,11 @@
 import { getJson, putJson, postJson } from "requests";
-import { REQUEST_CARD, RECEIVE_CARD, UPDATE_CARD, SAVE_CARD, ERROR_RECEIVE_CARD } from "./actionTypes";
+import { 
+    REQUEST_CARD, 
+    RECEIVE_CARD, 
+    UPDATE_CARD, 
+    SAVE_CARD, 
+    ERROR_RECEIVE_CARD 
+} from "./actionTypes";
 import Config from "config";
 
 const requestCard = () => ({
