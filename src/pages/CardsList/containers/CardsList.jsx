@@ -48,11 +48,6 @@ const CardsList = (
         isLoading,
         isError,
     } = useSelector(({reducer}) => reducer.reducer);
-    console.log({
-        list,
-        isLoading,
-        isError,
-    });
 
     useEffect(() => {
         dispatch(Actions.receiveCards());

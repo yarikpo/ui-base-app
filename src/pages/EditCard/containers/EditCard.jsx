@@ -23,12 +23,6 @@ const EditCard = (
         isLoading,
         isRedirect,
     } = useSelector(({reducer}) => reducer.reducer);
-    console.log({
-        card,
-        isError,
-        isLoading,
-        isRedirect,
-    });
 
     const history = useHistory();
     const navigateToCardList = () => {
@@ -51,7 +45,6 @@ const EditCard = (
     }
 
     const handleCodeChange = (e) => {
-        console.log(e.target.value);
         setState(prev => ({
             ...prev,
             card: {
@@ -62,7 +55,6 @@ const EditCard = (
     }
 
     const handleCVVChange = (e) => {
-        console.log(e.target.value);
         setState(prev => ({
             ...prev,
             card: {
@@ -73,7 +65,6 @@ const EditCard = (
     }
 
     const handleNameChange = (e) => {
-        console.log(e.target.value);
         setState(prev => ({
             ...prev,
             card: {
@@ -84,7 +75,6 @@ const EditCard = (
     }
 
     const handleSurnameChange = (e) => {
-        console.log(e.target.value);
         setState(prev => ({
             ...prev,
             card: {
@@ -95,7 +85,6 @@ const EditCard = (
     }
 
     const handleDateChange = (e) => {
-        console.log(e.target.value);
         setState(prev => ({
             ...prev,
             card: {
@@ -105,9 +94,7 @@ const EditCard = (
         }));
     }
 
-    useEffect(() => {
-        console.log(`${cardId}`);
-        
+    useEffect(() => {        
         if (cardId > 0) {
             dispatch(Actions.receiveCardById({ cardId }));
         }
@@ -121,7 +108,6 @@ const EditCard = (
     }, [card]);
 
     const [state, setState] = useState({card});
-    console.log(state);
 
     return (
         <div>
